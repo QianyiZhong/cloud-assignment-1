@@ -1,5 +1,8 @@
 cloud-assignment-1
 ==================
+
+This homework was done by Qianyi Zhong(qz2198) and  Weixin Wu (ww2383). 
+
 We realized the realtime tweets fetching and store the tweets into Amazon SimpleDB in TwitterGet2.java.
 
 We can get the number of the tweets in a certain size of area by click "count", and the TwittMap also supports heatmap.
