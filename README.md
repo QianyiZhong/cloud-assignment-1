@@ -11,6 +11,6 @@ The webpage will refreshed by every one minites which will let the new tweets ge
 Also we realized Elastic Beanstalk in the forlder Beanstalk.
 
 
+Sorry, I provided a wrong link, below is the right one.
 
-
-App link:  http://aliluya-env.elasticbeanstalk.com/
+App link:  http://twittermapasd-env.elasticbeanstalk.com/
