@@ -9,3 +9,8 @@ We predifined some keywords, and we can select keyword for query from the downli
 The webpage will refreshed by every one minites which will let the new tweets get in.
 
 Also we realized Elastic Beanstalk in the forlder Beanstalk.
+
+
+
+
+App link:  http://aliluya-env.elasticbeanstalk.com/
