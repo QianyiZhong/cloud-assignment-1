@@ -156,18 +156,7 @@
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script>
-	    		/**
-	    			Get lat and lng from address
-	    		*/
-	   // 		function LocationGet(address)
-	    //		{
-    		//		var xmlHttp = null;
-    			//    var Url = "https://maps.googleapis.com/maps/api/geocode/json?address="+encodeURIComponent(address)+"&sensor=false";
-    			  //  xmlHttp = new XMLHttpRequest();
-    			   // xmlHttp.open( "GET", theUrl, false );
-    			   // xmlHttp.send( null );
-    			    //return xmlHttp.responseText;
-	    		//}
+	    	
     </script>
 <script>
    	/*  
