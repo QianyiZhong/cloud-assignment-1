@@ -195,20 +195,7 @@
 	//	{
 			
 			for(Item item : list) {
-			//{
-				//	String keyList = null;
-					//if(t.getProperty("keyword")!=null)
-					//{
-						//keyList= t.getProperty("keyword").toString();
-					//}
-			//		if( keyword.equals("All") || (  keyList !=null && keyList.toLowerCase().indexOf(keyword.toLowerCase()) != -1))
-				//	{
-					//	Double longitude = null;
-						//Double latitude = null;
-						//if(t.getProperty("Longitude") !=null  && t.getProperty("Latitude") != null)
-						//{
-							//String lon = t.getProperty("Longitude").toString();
-							//String lat = t.getProperty("Latitude").toString();
+		
 						
         			
         	System.out.println("====!!!!========="+item.getAttributes().get(0).getValue());
