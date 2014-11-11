@@ -108,17 +108,7 @@
 	timeline = T;
 	keyword = K;
 		}
-	//	String filepath = timeline+"-0"+".json";
-	
-	//keyword = "Baseball";
-	//timeline = "10-30-2014";
-	//String filepath = "/Users/Jialu/Documents/EC2workspace/Web/"+timeline+"-0"+".json";
-	/* System.out.println("#################");
-	System.out.println(keyword); */
-		
-	  //  cloud.DataFetch df = new cloud.DataFetch(filepath, "UTF-8");
-	    //AmazonSimpleDBClient sdb = df.getSDB();
-	   // List<Item> list = df.readLatLngKeyword(keyword);
+
 	   
 	   AWSCredentials credentials = new PropertiesCredentials(DataFetch.class.getResourceAsStream("AwsCredentials.properties"));
 		//sdb = new AmazonSimpleDBClient(credentials);
@@ -131,20 +121,7 @@
         selectResult = newDb.select(selectRequest);
         List<Item> list = selectResult.getItems();
 	   
-	 //   List<Item> list = df.readLatLngDateKeyword(timeline, keyword);
-		//Retrieve data form json to datastore
-//		int index = time_index.get(timeline);
-	//	if(!time_finished.get(timeline)){
-		//	if(TweetRetrive.json2datastore(index, timeline))
-	//{
-	//	num += item_size;
-		//increase the timeline index for that day
-	//			time_index.put(timeline,index+1);
-		//	}
-		//	else{
-	///"10-29-2014-0.json"/	time_finished.put(timeline,true);
-	//}
-		//}
+	
 		
   		// Get a list of predefined keyword
   	ArrayList<String> dropdownList = new ArrayList<String>();
