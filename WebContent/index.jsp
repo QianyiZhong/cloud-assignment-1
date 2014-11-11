@@ -171,28 +171,7 @@
     	
 		<%
 	
-	//	List<Entity> OldResults = MemCache.getFromCache(timeline);
-		//if(!time_finished.get(timeline))
-		//{
-			//List<Entity> NewResults = TweetRetrive.fetchEntities(timeline);
-			//if(OldResults == null)
-			//{
-				//if(NewResults!=null){
-				//	OldResults = NewResults;
-					//MemCache.storeToCache(timeline, OldResults);
-				//}
-			//}
-		//	else{
-			//	boolean equalLists = OldResults.size() == NewResults.size() && OldResults.containsAll(NewResults);
-				//if(!equalLists)
-				//{
-					//OldResults = NewResults;
-					//MemCache.storeToCache(timeline, OldResults);				
-				//}
-			//}
-		//}
-	//	if(OldResults!=null)
-	//	{
+
 			
 			for(Item item : list) {
 		
