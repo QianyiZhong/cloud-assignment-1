@@ -109,19 +109,91 @@
 	keyword = K;
 		}
 
-	   
+	 
 	   AWSCredentials credentials = new PropertiesCredentials(DataFetch.class.getResourceAsStream("AwsCredentials.properties"));
 		//sdb = new AmazonSimpleDBClient(credentials);
         AmazonSimpleDBClient newDb = new AmazonSimpleDBClient(credentials);
         
         SelectResult selectResult = null;
-        String query = null;     
-        query = "select Latitude, Longitude, keyword from " + "car" + " where keyword = '" + keyword + "' and Date = '" + timeline + "'";
-        SelectRequest selectRequest = new SelectRequest(query);
-        selectResult = newDb.select(selectRequest);
-        List<Item> list = selectResult.getItems();
-	   
-	
+        SelectResult selectResult1 = null;
+        SelectResult selectResult2 = null;
+        SelectResult selectResult3 = null;
+        SelectResult selectResult4 = null;
+        SelectResult selectResult5 = null;
+        SelectResult selectResult6 = null;
+        SelectResult selectResult7 = null;
+        String query = null; 
+        String query1 = null; 
+        String query2 = null; 
+        String query3 = null; 
+        String query4 = null; 
+        String query5 = null; 
+        String query6 = null; 
+        String query7 = null; 
+        List<Item> list = null;
+        List<Item> list1 = null;
+        List<Item> list2 = null;
+        List<Item> list3 = null;
+        List<Item> list4 = null;
+        List<Item> list5 = null;
+        List<Item> list6 = null;
+        List<Item> list7 = null;
+        int countt = 0;
+ 	   if (keyword.equals("All")) {
+ 		  
+ 		  String nextToken = null;
+ 	 		//  int domainCount = newDb.domainMetadata();
+ 	 		 boolean flag = true;
+ 	 		query2 = "select Latitude, Longitude, keyword from " + "car" + " where Date = '" + timeline + "' LIMIT 100";
+ 	        SelectRequest selectRequest2 = new SelectRequest(query2);
+ 	        selectResult2 = newDb.select(selectRequest2);
+ 	        list2 = selectResult2.getItems();
+ 	        if (list2.size() < 100){
+ 	        	flag = false;
+ 	        }
+ 	         while(flag){
+
+ 	        query1 = "select Latitude, Longitude, keyword from " + "car" + " where Date = '" + timeline + "' LIMIT 100";
+ 	        SelectRequest selectRequest1 = new SelectRequest(query1);
+ 	        selectResult1 = newDb.select(selectRequest1);
+ 	        list1 = selectResult1.getItems();
+ 	        if (list1.size() < 100){
+ 	        	flag = false;
+ 	        }
+ 	        list2.addAll(list1);
+ 	        nextToken = selectResult1.getNextToken();
+
+ 	         }
+ 	         list = list2;
+ 	      //  list = selectResult.getItems();
+ 	   } else {
+ 		  String nextToken = null;
+ 		//  int domainCount = newDb.domainMetadata();
+ 		 boolean flag = true;
+ 		query2 = "select Latitude, Longitude, keyword from " + "car" + " where keyword = '" + keyword + "' and Date = '" + timeline + "' LIMIT 100";
+        SelectRequest selectRequest2 = new SelectRequest(query2);
+        selectResult2 = newDb.select(selectRequest2);
+        list2 = selectResult2.getItems();
+        if (list2.size() < 100){
+        	flag = false;
+        }
+         while(flag){
+
+        query1 = "select Latitude, Longitude, keyword from " + "car" + " where keyword = '" + keyword + "' and Date = '" + timeline + "' LIMIT 100";
+        SelectRequest selectRequest1 = new SelectRequest(query1);
+        selectResult1 = newDb.select(selectRequest1);
+        list1 = selectResult1.getItems();
+        if (list1.size() < 100){
+        	flag = false;
+        }
+        list2.addAll(list1);
+        nextToken = selectResult1.getNextToken();
+
+         }
+         list = list2;
+ 	   }
+	  
+	//   System.out.println( selectResult.toString());
 		
   		// Get a list of predefined keyword
   	ArrayList<String> dropdownList = new ArrayList<String>();
@@ -176,7 +248,7 @@
 			for(Item item : list) {
 		
 						
-        			
+        	countt++;	
         	System.out.println("====!!!!========="+item.getAttributes().get(0).getValue());
         	System.out.println("====!!!!========="+item.getAttributes().get(1).getValue());
         					Double latitude = null;
@@ -187,7 +259,7 @@
 							Location.push(new google.maps.LatLng(<%=latitude%>, <%=longitude%>));
 				<%
         	}
-		
+		 System.out.println(countt);
 					//	}
 						//else
 						//{
@@ -212,7 +284,7 @@
 	}
    	
 	
-
+	
 
 
     
@@ -331,3 +403,4 @@
 	</div>
 </body>
 </html>
+
