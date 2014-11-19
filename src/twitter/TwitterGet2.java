@@ -229,7 +229,9 @@ public class TwitterGet2 {
 					            itemName=k.toString();
 					            System.out.println("??????????????????????");
 					            System.out.println(itemName);
-			            	
+			                             if (k%50 == 0) {
+			            	    		Thread.sleep(1000*3600);
+			            		     }
 			            	//jo.put("Date", tweet.getCreatedAt());
 			            	jo.put("Date",filePath);
 			            	jo.put("Latitude", latitude);
